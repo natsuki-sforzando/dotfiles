@@ -1,0 +1,13 @@
+[user]
+    name = natsuki-sforzando
+    email = natsuki@sforzando.co.jp
+
+[core]
+    editor = code --wait
+    autocrlf = input
+
+[pull]
+    rebase = true
+
+[init]
+    defaultBranch = main

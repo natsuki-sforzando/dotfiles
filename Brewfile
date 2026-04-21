@@ -1,0 +1,20 @@
+# CLI tools
+brew "chezmoi"
+brew "gnupg"
+
+# GUI apps (cask)
+cask "1password"
+cask "claude"
+cask "clipy"
+cask "dbeaver-community"
+cask "docker-desktop"
+cask "ghostty"
+cask "google-japanese-ime"
+cask "karabiner-elements"
+cask "notion"
+cask "pika"
+cask "raycast"
+cask "slack"
+cask "visual-studio-code"
+cask "vivaldi"
+cask "zoom"
