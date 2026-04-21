@@ -2,3 +2,5 @@ theme = Banana Blueberry
 background-opacity = 0.9
 background-blur = true
 keybind = shift+enter=text:\n
+font-family = Inconsolata-g for Powerline
+font-thicken = true
