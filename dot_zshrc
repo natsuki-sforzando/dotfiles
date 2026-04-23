@@ -69,6 +69,9 @@ if (( $+commands[ghq] )); then
   alias repo='cd $(ghq root)/$(repos)'
 fi
 
+# mise
+eval "$(mise activate zsh)"
+
 # navi
 if (( $+commands[navi] )); then
   eval "$(navi widget zsh)"
