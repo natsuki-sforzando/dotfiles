@@ -21,6 +21,7 @@ brew "zsh-syntax-highlighting"                     # Syntax highlighting for the
 cask "1password"                                   # A password manager that keeps all your passwords secure and accessible.
 cask "claude"                                      # AI chat application.
 cask "clipy"                                       # A clipboard manager.
+cask "cmux"                                        # A terminal multiplexer.
 cask "dbeaver-community"                           # A free multi-platform database tool.
 cask "docker-desktop"                              # Docker Desktop for Mac.
 cask "figma"                                       # A collaborative interface design tool.

@@ -11,6 +11,7 @@
         "chezmoi",
         "chpwd",
         "clipy",
+        "cmux",
         "commitizen",
         "compdef",
         "compinit",
