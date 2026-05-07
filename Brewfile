@@ -14,6 +14,7 @@ brew "navi"                                        # An interactive cheatsheet t
 brew "starship"                                    # The minimal, blazing-fast, and infinitely customizable prompt for any shell.
 brew "tealdeer"                                    # A fast, simple tldr client.
 brew "topgrade"                                    # Upgrade everything.
+brew "satococoa/tap/wtp"                           # A tool to use git worktrees with ease.
 brew "zsh-autosuggestions"                         # Fish-like autosuggestions for zsh.
 brew "zsh-syntax-highlighting"                     # Syntax highlighting for the zsh shell.
 

@@ -49,6 +49,7 @@
         "pkgsite",
         "powerline",
         "rustup",
+        "satococoa",
         "setopt",
         "shellenv",
         "tealdeer",
@@ -61,6 +62,7 @@
         "viteplus",
         "winget",
         "Winget",
+        "worktrees",
         "zigup"
     ]
 }
