@@ -17,16 +17,16 @@ if (( $+commands[bat] )); then
   alias cat="bat"
 fi
 
-# chezmoi: https://www.chezmoi.io
-if (( $+commands[chezmoi] )); then
-  eval "$(chezmoi completion zsh)"
-fi
-
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Enable Zsh completion (after brew shellenv so Homebrew completions are in fpath)
 autoload -Uz compinit && compinit
+
+# chezmoi: https://www.chezmoi.io
+if (( $+commands[chezmoi] )); then
+  eval "$(chezmoi completion zsh)"
+fi
 
 # direnv: https://github.com/direnv/direnv
 if (( $+commands[direnv] )); then
