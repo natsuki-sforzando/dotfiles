@@ -17,6 +17,7 @@ brew "topgrade"                                    # Upgrade everything.
 brew "satococoa/tap/wtp"                           # A tool to use git worktrees with ease.
 brew "zsh-autosuggestions"                         # Fish-like autosuggestions for zsh.
 brew "zsh-syntax-highlighting"                     # Syntax highlighting for the zsh shell.
+brew "zoxide"                                      # A smarter cd command. Best with fzf.
 
 # GUI apps (cask)
 cask "1password"                                   # A password manager that keeps all your passwords secure and accessible.

@@ -1,5 +1,9 @@
 {
   "model": "opusplan",
+  "statusLine": {
+    "type": "command",
+    "command": "sh ~/.claude/statusline-command.sh"
+  },
   "enabledPlugins": {
     "learning-output-style@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
