@@ -21,7 +21,10 @@ fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Enable Zsh completion (after brew shellenv so Homebrew completions are in fpath)
-autoload -Uz compinit && compinit
+# -u: skip the insecure-directory prompt. Homebrew's zsh function dirs are
+# group-writable by `staff` on purpose (shared between our staff accounts),
+# so the check is a known false positive here.
+autoload -Uz compinit && compinit -u
 
 # chezmoi: https://www.chezmoi.io
 if (( $+commands[chezmoi] )); then

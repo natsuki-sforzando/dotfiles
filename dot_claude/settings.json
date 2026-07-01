@@ -13,5 +13,13 @@
     "commit-commands@claude-plugins-official": true,
     "figma@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "crit": {
+      "source": {
+        "source": "github",
+        "repo": "tomasz-tomczyk/crit"
+      }
+    }
   }
 }
