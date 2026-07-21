@@ -1,8 +1,22 @@
 {
-  "model": "opusplan",
+  "model": "sonnet",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/Users/sfz-nn/.claude/hooks/context-mode-cache-heal.mjs\""
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
-    "command": "sh ~/.claude/statusline-command.sh"
+    "command": "ccstatusline",
+    "padding": 0,
+    "refreshInterval": 10
   },
   "enabledPlugins": {
     "learning-output-style@claude-plugins-official": true,
@@ -12,7 +26,10 @@
     "frontend-design@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
     "figma@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true
+    "pyright-lsp@claude-plugins-official": true,
+    "crit@crit": true,
+    "i-have-adhd@i-have-adhd": true,
+    "context-mode@context-mode": true
   },
   "extraKnownMarketplaces": {
     "crit": {
@@ -20,6 +37,14 @@
         "source": "github",
         "repo": "tomasz-tomczyk/crit"
       }
+    },
+    "i-have-adhd": {
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
+      }
     }
-  }
+  },
+  "effortLevel": "high",
+  "skipWorkflowUsageWarning": true
 }

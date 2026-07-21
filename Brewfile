@@ -34,6 +34,7 @@ cask "font-inconsolata-g-for-powerline"            # Inconsolata font for Powerl
 cask "karabiner-elements"                          # A powerful keyboard customizer.
 cask "notion"                                      # A collaborative workspace.
 cask "pika"                                        # Color ratio difference checker.
+cask "obsidian"                                    # A knowledge base that works on local Markdown files.
 cask "raycast"                                     # A fast launcher for macOS.
 cask "slack"                                       # A team communication tool.
 cask "touchdesigner"                               # A visual development environment.
