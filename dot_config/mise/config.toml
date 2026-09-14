@@ -1,2 +1,3 @@
 [tools]
 node = 'lts'
+"npm:ccstatusline" = "2.2.27"

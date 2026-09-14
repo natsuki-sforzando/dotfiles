@@ -1,5 +1,5 @@
 {
-  "model": "sonnet",
+  "model": "opus[1m]",
   "hooks": {
     "SessionStart": [
       {
@@ -29,7 +29,8 @@
     "pyright-lsp@claude-plugins-official": true,
     "crit@crit": true,
     "i-have-adhd@i-have-adhd": true,
-    "context-mode@context-mode": true
+    "context-mode@context-mode": true,
+    "mattpocock-skills@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "crit": {
@@ -46,5 +47,40 @@
     }
   },
   "effortLevel": "high",
-  "skipWorkflowUsageWarning": true
+  "skipWorkflowUsageWarning": true,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(task db:seed:users ENV=prod:*) — writes to production namespace, matches Sensitive remote targets",
+      "Bash(gcloud * --project=flipples-jp * prod*) — production-scoped gcloud operations in this project"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: sforzando (GitHub org; repo github.com/sforzando/flipples-jp)",
+      "**Cloud provider(s)**: Google Cloud Platform (GCP project `flipples-jp`, region asia-northeast1; Cloud Run, Cloud SQL, Cloud Storage, Secret Manager, Artifact Registry per terraform/)",
+      "**Repository visibility**: private (sforzando/flipples-jp, confirmed via gh)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: GCP Secret Manager (gcloud secrets; secrets referenced: JWT_SECRET_KEY, ADMIN_USERNAME, ADMIN_PASSWORD, EMBODYME_API_KEY, SENTRY_DSN_BACKEND, SENTRY_DSN_FRONTEND per terraform/secrets.tf); repo also uses git-secret for .env; CI secrets: CLAUDE_CODE_OAUTH_TOKEN, GITHUB_TOKEN, GPG_PRIVATE_KEY, GPG_SECRET_PASSPHRASE, SENTRY_AUTH_TOKEN, SERVICE_ACCOUNT_EMAIL, WORKLOAD_IDENTITY_PROVIDER",
+      "**Default / protected branches**: `main` is the default branch; ruleset active on `main` and it is listed as protected (via gh)",
+      "**CI/CD deploy targets**: GitHub Actions workflows deploy-frontend.yml, deploy-backend.yml, promote-prod.yml, terraform.yml targeting GCP Cloud Run/Cloud SQL/Artifact Registry (this repo only)",
+      "**Network posture**: None configured",
+      "**Source control**: The trusted repo (sforzando/flipples-jp) and its origin remote only",
+      "**Trusted internal domains**: flipples.jp, poc.flipples.jp, poc-staging.flipples.jp, admin.flipples.jp (this repo's own hosts, contacted in project transcripts)",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: .env, .env.example, .env.secret, .envrc and terraform/*.tf (secrets, IAM, workload identity config); deploy/*/service-prod.yaml; git-secret encrypted files — share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: Local dev Cloud Storage bucket objects (flipples-jp-dev-assets) auto-deleted after 7 days per .env.example",
+      "**Sensitive remote targets**: any host/namespace with `prod`/`production` as a whole word/segment — includes deploy/backend/service-prod.yaml, deploy/frontend/service-prod.yaml, deploy/worker/service-prod.yaml, .github/workflows/promote-prod.yml, and `task db:seed:users ENV=prod`",
+      "**Protected deployment namespaces / environments**: prod/production environments in this repo's Cloud Run services and promote-prod.yml workflow; `task db:seed` explicitly refuses production",
+      "**Protected IaC scopes**: terraform/iam.tf, terraform/workload_identity.tf, terraform/cloudsql.tf, terraform/loadbalancer.tf, terraform/dns.tf, terraform/cloud_armor.tf and any prod-tagged resources in terraform/",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development (web radio / AI interactive podcast app — flipples-jp)",
+      "**Trusted repo**: sforzando/flipples-jp (this repo, private) and its origin remote",
+      "**Org-specific CLIs**: task (Taskfile.yml), gcloud, gh — routine under this repo's working directory",
+      "**routine under repo/ prefix qualifiers**: `task` commands and `gcloud` commands scoped to this project's GCP project (flipples-jp) are routine"
+    ]
+  }
 }

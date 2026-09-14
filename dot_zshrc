@@ -17,6 +17,10 @@ if (( $+commands[bat] )); then
   alias cat="bat"
 fi
 
+# Default to group-writable file creation so files either staff account (nn,
+# sfz-nn) creates under /opt/homebrew stay writable by the other account too.
+umask 002
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
