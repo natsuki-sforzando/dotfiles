@@ -98,3 +98,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # wtp (Worktree Plus)
 eval "$(wtp shell-init zsh)"
+
+# Orca
+orca-here() {
+  local root
+  root=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "gitリポジトリじゃないよ"; return 1; }
+  orca open --json >/dev/null
+  orca repo add --path "$root" --json
+}
